@@ -58,4 +58,22 @@ void _pall(stack_t **stack, unsigned int n)
 		fprintf(stdout, "%d\n", node->n);
 		node = node->next;
 	}
+
+}
+
+/**
+ * _pint - prints the top element of the stack
+ * @stack: double pointer to stack
+ * @n: line number that opcode is call at.
+ * Return: Nothing
+ */
+void _pint(stack_t **stack, unsigned int n)
+{
+	if (!stack || !(*stack))
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", n);
+		exit(EXIT_FAILURE);
+	}
+
+	fprintf(stdout, "%d\n", (*stack)->n);
 }

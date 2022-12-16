@@ -3,7 +3,8 @@
 
 static instruction_t ops[] = {
 	{"push", _push},
-	{"pall", _pall}
+	{"pall", _pall},
+	{"pint", _pint}
 };
 
 /**
