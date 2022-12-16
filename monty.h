@@ -39,6 +39,36 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number):
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * free_stack - frees memory allocated to stack nodes
+ * @stack: double pointer to stack head
+ * Return: Nothing
+ */
+/*
+void free_stack(stack_t **stack)
+{
+	stack_t *current;
+
+	current = *stack;
+
+	while (current != NULL)
+	{
+		free(current);
+		current = current->next;
+		free(current->prev);
+	}
+}*/
+
+stack_t *build_list(stack_t *head);
+void call(char **tokens, stack_t **stack);
+char **tokenized(char *buffer);
+void _push(stack_t **stack, unsigned int n);
+void _pall(stack_t **stack, unsigned int n);
+void free_stack(stack_t **stack);
+void is_valid(char ** token, stack_t **stack);
+
+
+#endif /* _MONTY_H */
