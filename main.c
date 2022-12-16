@@ -1,3 +1,6 @@
+#define _GNU_SOURCE
+#include <stdio.h>
+#include <stdlib.h>
 #include "monty.h"
 
 unsigned int line_number = 0;
@@ -14,7 +17,7 @@ int main(int argc, char *argv[])
 	stack_t *head = NULL; /* pointer to stack */
 	char *buffer = NULL;
 	FILE *fp;
-	size_t n;
+	size_t n = 0;
 
 	if (argc != 2)
 	{
