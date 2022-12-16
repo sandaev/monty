@@ -77,3 +77,35 @@ void _pint(stack_t **stack, unsigned int n)
 
 	fprintf(stdout, "%d\n", (*stack)->n);
 }
+
+/**
+ * _pop - removes the top element from a stack
+ * @stack: double ptr to satck
+ * @n: line number
+ * Return: Nothing
+ */
+void _pop(stack_t **stack, unsigned int n)
+{
+	stack_t *node;
+
+	(void) n;
+
+	if (!stack || !(*stack))
+	{
+		fprintf(stderr, "L%u: can't pop an empty list\n", n);
+		exit(EXIT_FAILURE);
+	}
+
+	node = *stack;
+
+	if ((*stack)->next)
+	{
+		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
+	}
+	else
+	{
+		*stack = NULL;
+	}
+	free(node);
+}
