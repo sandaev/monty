@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
 	char **tokens = NULL; /*List of tokens */
 	stack_t *head = NULL; /* pointer to stack */
 	char *buffer = NULL;
+	int delim = '\n';
 	FILE *fp;
 	size_t n = 0;
 
@@ -32,7 +33,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	while ((getline(&buffer, &n, fp)) != -1)
+	while ((getdelim(&buffer, &n, delim, fp)) != -1)
 	{
 		line_number++;
 		tokens = tokenized(buffer);
