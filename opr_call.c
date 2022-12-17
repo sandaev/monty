@@ -9,7 +9,8 @@ static instruction_t ops[] = {
 	{"swap", _swap},
 	{"add", _add},
 	{"nop", NULL},
-	{"sub", _sub}
+	{"sub", _sub},
+	{"div", _div}
 };
 
 /**
