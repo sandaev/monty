@@ -21,3 +21,25 @@ void _add(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = ((*stack)->next->n) + ((*stack)->n);
 	_pop(stack, line_number);
 }
+
+/**
+ * _sub - subtracts the two topmost elements of a stack
+ * @stack: double ptr to the stack
+ * @line_number: line number
+ *
+ * Return: Nothing
+ */
+void _sub(stack_t **stack, unsigned int line_number)
+{
+	if (stack == NULL || (*stack == NULL) || ((*stack)->next == NULL))
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		if (*stack)
+		{
+			free_stack(stack);
+		}
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n = ((*stack)->next->n) - ((*stack)->n);
+	_pop(stack, line_number);
+}
