@@ -109,3 +109,31 @@ void _pop(stack_t **stack, unsigned int n)
 	}
 	free(node);
 }
+
+/**
+ * _swap - swaps the data in two nodes
+ * @stack: pointer to stack
+ * @line_number: line number
+ *
+ * Return: Nothing
+ */
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	int temp = 0;
+
+	if ((stack == NULL) || (*stack == NULL) || ((*stack)->next) == NULL)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		if (*stack)
+		{
+			free_stack(stack);
+		}
+		exit(EXIT_FAILURE);
+	}
+
+	(void) line_number;
+
+	temp = (*stack)->next->n;
+	(*stack)->next->n = (*stack)->n;
+	(*stack)->n = temp;
+}
