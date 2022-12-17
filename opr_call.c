@@ -7,7 +7,8 @@ static instruction_t ops[] = {
 	{"pint", _pint},
 	{"pop", _pop},
 	{"swap", _swap},
-	{"add", _add}
+	{"add", _add},
+	{"nop", NULL}
 };
 
 /**
