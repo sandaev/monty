@@ -71,3 +71,23 @@ void _div(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = ((*stack)->next->n) / ((*stack)->n);
 	_pop(stack, line_number);
 }
+
+/**
+ * _mul - mu;tiply topmost elements
+ * @stack: pointer
+ * @line_number: number
+ */
+void _mul(stack_t **stack, unsigned int line_number)
+{
+	if (stack == NULL || (*stack == NULL) || ((*stack)->next == NULL))
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		if (*stack)
+		{
+			free_stack(stack);
+		}
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n = ((*stack)->next->n) * ((*stack)->n);
+	_pop(stack, line_number);
+}
