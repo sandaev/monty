@@ -86,3 +86,37 @@ void _rotl(stack_t **stack, unsigned int n)
 	head->prev = tail;
 	head->next = NULL;
 }
+
+/**
+ * _rotr - rotates a stack
+ * @stack: double ptr to stack
+ * @n: line number
+ *
+ * Return: Nothing
+ */
+void _rotr(stack_t **stack, unsigned int n)
+{
+	stack_t *head = NULL;
+	stack *tail = NULL;
+
+	(void) n;
+
+	if (!stack || !(*stack) || !(*stack)->next)
+	{
+		return;
+	}
+
+	tail = *stack;
+	head = *stack;
+
+	while (head->next)
+	{
+		head = head->next;
+	}
+
+	head->prev->next = NULL;
+	head->next = tail;
+	head->prev = NULL;
+	tail->prev = head;
+	*stack = head;
+}
