@@ -77,4 +77,5 @@ void _sub(stack_t **stack, unsigned int n);
 void _div(stack_t **stack, unsigned int n);
 void _mul(stack_t **stack, unsigned int n);
 void _mod(stack_t **stack, unsigned int n);
+void _pchar(stack_t **stack, unsigned int n);
 #endif /* _MONTY_H */
