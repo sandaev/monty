@@ -50,7 +50,7 @@ void _pstr(stack_t **stack, unsigned int n)
 		{
 			break;
 		}
-		fprintf(stdout, "%cc", node->n);
+		fprintf(stdout, "%c", node->n);
 		node = node->next;
 	}
 	fprintf(stdout, "\n");
