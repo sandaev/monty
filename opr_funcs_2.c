@@ -24,3 +24,34 @@ void _pchar(stack_t **stack, unsigned int line_number)
 
 	fprintf(stdout, "%c\n", (*stack)->n);
 }
+
+/**
+ * _pstr - prints the string starting at the top of the stack
+ * @stack: double pointer to stack
+ * @n: line number
+ *
+ * Return: Nothing
+ */
+void _pstr(stack_t **stack, unsigned int n)
+{
+	stack_t *node;
+	(void) n;
+
+	if (!stack || !(*stack))
+	{
+		fprintf(stdout, "\n");
+		return;
+	}
+
+	node = *stack;
+	while (node)
+	{
+		if (node->n <= 0 || node->n > 127)
+		{
+			break;
+		}
+		fprintf(stdout, "%cc", node->n);
+		node = node->next;
+	}
+	fprintf(stdout, "\n");
+}

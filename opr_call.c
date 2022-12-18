@@ -13,7 +13,8 @@ static instruction_t ops[] = {
 	{"div", _div},
 	{"mul", _mul},
 	{"mod", _mod},
-	{"pchar", _pchar}
+	{"pchar", _pchar},
+	{"pstr", _pstr}
 };
 
 /**
