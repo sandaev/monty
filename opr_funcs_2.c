@@ -77,7 +77,7 @@ void _rotl(stack_t **stack, unsigned int n)
 	head = *stack;
 	tail = head->next;
 	tail->prev = NULL;
-	*stack = t;
+	*stack = tail;
 	while (tail->next)
 	{
 		tail = tail->next;
