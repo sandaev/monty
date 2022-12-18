@@ -55,3 +55,34 @@ void _pstr(stack_t **stack, unsigned int n)
 	}
 	fprintf(stdout, "\n");
 }
+
+/**
+ * _rotl - rotates the stack elements bottom up
+ * @stack: double pointer to stack
+ * @n: line number
+ *
+ * Return: Nothing
+ */
+void _rotl(stack_t **stack, unsigned int n)
+{
+	stack_t *head = NULL;
+	stack_t *tail = NULL;
+	(void) n;
+
+	if (!stack || !(*stack) || !(*stack)->next)
+	{
+		return;
+	}
+
+	head = *stack;
+	tail = head->next;
+	tail->prev = NULL;
+	*stack = t;
+	while (tail->next)
+	{
+		tail = tail->next;
+	}
+	tail->next = head;
+	head->prev = tail;
+	head->next = NULL;
+}
