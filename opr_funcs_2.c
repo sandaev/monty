@@ -97,7 +97,7 @@ void _rotl(stack_t **stack, unsigned int n)
 void _rotr(stack_t **stack, unsigned int n)
 {
 	stack_t *head = NULL;
-	stack *tail = NULL;
+	stack_t *tail = NULL;
 
 	(void) n;
 
